@@ -1,0 +1,12 @@
+<?php
+
+namespace App\Data\Entities\Contacts;
+
+use Go2Flow\ApiPlatform\Traits\DataRules;
+
+class $NAME$Payload extends Abstract$NAME$
+{
+
+    use DataRules;
+
+}

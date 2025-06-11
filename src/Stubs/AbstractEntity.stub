@@ -1,0 +1,10 @@
+<?php
+
+namespace App\Data\Entities\$NAME$;
+
+use Spatie\LaravelData\Data;
+
+class Abstract$NAME$ extends Data
+{
+
+}

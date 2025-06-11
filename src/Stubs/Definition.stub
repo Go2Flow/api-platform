@@ -1,0 +1,82 @@
+<?php
+
+namespace App\Definitions;
+
+use Go2Flow\ApiPlatform\Helpers\ApiPlatformHelpers;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Spatie\LaravelData\Data;
+use Spatie\QueryBuilder\QueryBuilder;
+use Go2Flow\ApiPlatform\Interfaces\DefinitionInterface;
+
+class $NAME$Definition implements DefinitionInterface {
+
+    // import model
+    const MODEL = $NAME$::class;
+
+    public static function sort() : array {
+        return [
+            'id',
+            'updated_at',
+            'created_at',
+        ];
+    }
+
+    public static function relations() : array {
+
+        return [
+        ];
+
+}
+    public static function filters() : array {
+
+        return [
+            'id',
+            'value',
+            'bounced'
+        ];
+    }
+
+    public static function index(Request $request)  : LengthAwarePaginator {
+
+        return QueryBuilder::for($NAME$Definition::MODEL)
+            ->allowedFilters(
+
+                $NAME$Definition::filters()
+
+            )->allowedIncludes(
+            $NAME$Definition::relations()
+            )
+            ->allowedSorts(
+            $NAME$Definition::sort()
+            )
+            ->paginate(
+                $request->integer('per_page', ApiPlatformHelper::DEFAULT_PER_PAGE),
+                page: $request->integer('page', 1)
+            );
+    }
+
+    public static function show(int $model) : Model
+    {
+        return QueryBuilder::for($NAME$Definition::MODEL)
+            ->allowedIncludes($NAME$Definition::relations())
+            ->findOrFail($model);
+    }
+
+    public static function store(Data $payload) : ContactPayload {
+
+        return $NAME$Payload::from(
+            // set store instructions via Repository
+
+        );
+    }
+
+    public static function update(Data $payload, $model) : ContactPayload {
+
+        return $NAME$Payload::from(
+                // set update instructions via Repository
+
+        );
+    }
+}

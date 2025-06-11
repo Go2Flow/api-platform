@@ -1,0 +1,45 @@
+<?php
+
+namespace App\Http\Controllers\ApiPlatform;
+
+use App\ApiLogic\Definitions\$NAME$Definition;
+use App\Data\Entities\$NAME$s\$NAME$ as $NAME$Data;
+use App\Data\Entities\$NAME$s\$NAME$Payload;
+use App\Models\Customers\$NAME$;
+use Illuminate\Http\Request;
+use Spatie\LaravelData\Data;
+use Spatie\LaravelData\PaginatedDataCollection;
+
+class $NAME$Controller
+{
+
+    public function index(Request $request)
+    {
+
+        return $NAME$Data::collect(
+            $NAME$Definition::index($request),
+            PaginatedDataCollection::class
+        );
+    }
+
+    /**
+     * Customer Single
+     **/
+    public function show(int $customer) : $NAME$Data
+    {
+
+        return $NAME$Data::from($NAME$Definition::show($customer));
+    }
+
+    /**
+     * Customer Store
+     **/
+    public function store($NAME$Payload $payload) : Data {
+
+        return $NAME$Definition::store($payload);
+    }
+    public function update($NAME$ $contact, $NAME$Payload $payload) : Data {
+
+        return $NAME$Definition::update($payload, $contact);
+    }
+}

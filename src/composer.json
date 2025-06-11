@@ -1,0 +1,41 @@
+{
+    "name": "go2flow/api-platform",
+    "description": "go2flow tool for setting up api endpoints",
+    "type": "project",
+    "license": "MIT",
+    "keywords": [
+        "laravel",
+        "api platform"
+    ],
+
+    "authors": [
+        {
+            "name" : "Jelte ten Holt",
+            "email" : "jelte.tenholt@go2flow.de",
+            "homepage": "https://www.go2flow.de/",
+            "role" : "developer"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Go2Flow\\ApiPlatform\\ApiPlatformServiceProvider"
+            ]
+        }
+    },
+
+    "autoload" : {
+        "psr-4" : {
+            "Go2Flow\\ApiPlatform\\": "src/"
+        }
+    },
+
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^8.2",
+        "spatie/laravel-data": "^4.15",
+        "spatie/laravel-query-builder": "^6.3",
+        "dedoc/scramble": "^0.12.16",
+        "dedoc/scramble-pro": "^0.7.7"
+    }
+}
