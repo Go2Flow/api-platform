@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\ApiPlatform;
 
 use App\ApiLogic\Definitions\$NAME$Definition;
-use App\Data\Entities\$NAME$s\$NAME$ as $NAME$Data;
-use App\Data\Entities\$NAME$s\$NAME$Payload;
+use App\Data\Entities\$NAMES$\$NAME$ as $NAME$Data;
+use App\Data\Entities\$NAMES$\$NAME$Payload;
 use Illuminate\Http\Request;
 use Spatie\LaravelData\Data;
 use Spatie\LaravelData\PaginatedDataCollection;

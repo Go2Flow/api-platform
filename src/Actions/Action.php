@@ -35,7 +35,8 @@ abstract class Action {
 
     protected function setStubName(Stringable $stub, string $name)
     {
-        return $stub->replace('$NAME$', $name);
+        return $stub->replace('$NAME$', $name)
+            ->replace('$NAMES$', Str::plural($name));
 
     }
 

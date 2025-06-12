@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Data\Entities\Contacts;
+namespace App\Data\Entities\$NAMES$;
 
 use Go2Flow\ApiPlatform\Traits\DataRules;
 
