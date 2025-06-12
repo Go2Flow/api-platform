@@ -39,5 +39,7 @@ class Publish extends Command
         $publish = New PublishAction();
 
         $publish->create($name);
+
+        $this->info('Resource Published');
     }
 }

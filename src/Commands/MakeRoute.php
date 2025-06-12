@@ -40,5 +40,7 @@ class MakeRoute extends Command
         $routes = New Routes();
 
         $routes->create($name);
+
+        $this->info('Route added');
     }
 }

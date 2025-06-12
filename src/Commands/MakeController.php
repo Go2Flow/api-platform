@@ -39,5 +39,7 @@ class MakeController extends Command
         $controller = New Controllers();
 
         $controller->create($name);
+
+        $this->info('Controller created successfully.');
     }
 }

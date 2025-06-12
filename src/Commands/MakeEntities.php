@@ -40,5 +40,7 @@ class MakeEntities extends Command
         $entities = New Entities();
 
         $entities->create($name);
+
+        $this->info('Entities created successfully.');
     }
 }

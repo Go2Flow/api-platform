@@ -40,6 +40,6 @@ class MakeDefinition extends Command
 
         $definition->create($name);
 
-
+        $this->info('Definition created');
     }
 }
