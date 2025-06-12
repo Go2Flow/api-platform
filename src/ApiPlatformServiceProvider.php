@@ -30,8 +30,5 @@ class ApiPlatformServiceProvider extends ServiceProvider
             ]);
         }
 
-        $this->publishes([
-            __DIR__.'/Filters' => (New PathGenerator())->logicFilters()
-        ], 'filters');
     }
 }

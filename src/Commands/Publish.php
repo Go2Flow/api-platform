@@ -2,26 +2,24 @@
 
 namespace Go2Flow\ApiPlatform\Commands;
 
-use Go2Flow\ApiPlatform\Actions\Controllers;
-use Go2Flow\ApiPlatform\Actions\Routes;
 use Illuminate\Console\Command;
-use function Laravel\Prompts\text;
+use function Laravel\Prompts\select;
 
-class MakeRoute extends Command
+class Publish extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'api-platform:route {name?}';
+    protected $signature = 'api-platform:publish {name?}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Add a route to the api-platform.php file';
+    protected $description = 'Publish resources to the ApiLogic folder';
 
     /**
      * Execute the console command.
@@ -31,14 +29,15 @@ class MakeRoute extends Command
 
         if (! $name = $this->argument('name')) {
 
-            $name = text(
+            $name = select(
                 label: 'Please provide a Route name',
                 required: 'A Name is required',
+                options: ['Filter', 'Includes', 'Transformers'],
             );
         }
 
-        $routes = New Routes();
+        $publish = New Publish();
 
-        $routes->create($name);
+        $publish->create($name);
     }
 }

@@ -23,7 +23,7 @@ class MakeAll extends Command
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Create a Definition, Entities, Controller and Route for the api-platform ';
 
     /**
      * Execute the console command.

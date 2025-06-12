@@ -21,7 +21,7 @@ class MakeEntities extends Command
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Create Data Entities to the Data folder';
 
     /**
      * Execute the console command.

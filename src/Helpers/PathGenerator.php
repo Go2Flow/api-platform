@@ -10,6 +10,7 @@ class PathGenerator {
     CONST PROJECT_BASE = 'Go2Flow/ApiPlatform/';
     const STUB_BASE = __DIR__ . '/../../Stubs/';
     const ROUTE_BASE = 'routes/';
+    const PACKAGE_BASE = __DIR__ . '/../';
 
     public function routeApiPlatform() : string {
 
@@ -30,6 +31,7 @@ class PathGenerator {
     {
 
         return match ($type) {
+            'package' => static::PACKAGE_BASE . $path,
             'logic' => static::APP_BASE . 'ApiLogic/'  .$path,
             'data' => static::APP_BASE . 'Data/'  .$path,
             'controller' => static::APP_BASE . 'Http/Controllers/'  .$path,

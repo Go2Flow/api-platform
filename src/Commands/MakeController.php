@@ -20,7 +20,7 @@ class MakeController extends Command
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Create a new api-platform Controller';
 
     /**
      * Execute the console command.

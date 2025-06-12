@@ -20,7 +20,7 @@ class MakeDefinition extends Command
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Create a new Definition for use in an api-platform Controller';
 
     /**
      * Execute the console command.
