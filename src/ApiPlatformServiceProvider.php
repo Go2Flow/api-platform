@@ -2,9 +2,10 @@
 
 namespace Go2Flow\ApiPlatform;
 
-use Go2Flow\Ezport\Commands\MakeCustomer;
-use Go2Flow\Ezport\Commands\PrepareProject;
-use Go2Flow\Ezport\Commands\PublishHelpers;
+use Go2Flow\ApiPlatform\Commands\MakeAll;
+use Go2Flow\ApiPlatform\Commands\MakeController;
+use Go2Flow\ApiPlatform\Commands\MakeDefinition;
+use Go2Flow\ApiPlatform\Commands\MakeEntities;
 use Illuminate\Support\ServiceProvider;
 
 class ApiPlatformServiceProvider extends ServiceProvider
@@ -21,11 +22,11 @@ class ApiPlatformServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->commands([
-//                PrepareProject::class,
-//                MakeCustomer::class,
-//                PublishHelpers::class
+                MakeAll::class,
+                MakeDefinition::class,
+                MakeEntities::class,
+                MakeController::class,
             ]);
         }
     }
-
 }

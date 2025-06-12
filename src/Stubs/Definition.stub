@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Definitions;
+namespace App\ApiLogic\Definitions;
 
 use Go2Flow\ApiPlatform\Helpers\ApiPlatformHelpers;
 use Illuminate\Database\Eloquent\Model;

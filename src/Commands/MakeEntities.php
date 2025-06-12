@@ -2,18 +2,19 @@
 
 namespace Go2Flow\ApiPlatform\Commands;
 
-use Go2Flow\ApiPlatform\Actions\Definitions;
+use Go2Flow\ApiPlatform\Actions\Controllers;
+use Go2Flow\ApiPlatform\Actions\Entities;
 use Illuminate\Console\Command;
 use function Laravel\Prompts\text;
 
-class MakeDefinition extends Command
+class MakeEntities extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'api-platform:definition {name?}';
+    protected $signature = 'api-platform:entities {name?}';
 
     /**
      * The console command description.
@@ -31,15 +32,13 @@ class MakeDefinition extends Command
         if (! $name = $this->argument('name')) {
 
             $name = text(
-                label: 'Please provide a Definition name',
-                required: 'A Definition is required',
+                label: 'Please provide an Entities name',
+                required: 'A name is required',
             );
         }
 
-        $definition = New Definitions();
+        $entities = New Entities();
 
-        $definition->create($name);
-
-
+        $entities->create($name);
     }
 }
