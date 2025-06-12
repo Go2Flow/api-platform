@@ -4,7 +4,7 @@ namespace Go2Flow\ApiPlatform\Commands;
 
 use Illuminate\Console\Command;
 use function Laravel\Prompts\select;
-
+use Go2Flow\ApiPlatform\Actions\Publish as PublishAction;
 class Publish extends Command
 {
     /**
@@ -36,7 +36,7 @@ class Publish extends Command
             );
         }
 
-        $publish = New Publish();
+        $publish = New PublishAction();
 
         $publish->create($name);
     }
