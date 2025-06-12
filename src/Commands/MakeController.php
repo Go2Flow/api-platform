@@ -13,7 +13,7 @@ class MakeController extends Command
      *
      * @var string
      */
-    protected $signature = 'api-platform:definition {name?}';
+    protected $signature = 'api-platform:controller {name?}';
 
     /**
      * The console command description.

@@ -14,7 +14,7 @@ class MakeEntities extends Command
      *
      * @var string
      */
-    protected $signature = 'api-platform:entities {name?}';
+    protected $signature = 'api-platform:entity {name?}';
 
     /**
      * The console command description.
