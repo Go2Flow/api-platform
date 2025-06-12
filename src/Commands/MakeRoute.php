@@ -3,20 +3,18 @@
 namespace Go2Flow\ApiPlatform\Commands;
 
 use Go2Flow\ApiPlatform\Actions\Controllers;
-use Go2Flow\ApiPlatform\Actions\Definitions;
-use Go2Flow\ApiPlatform\Actions\Entities;
 use Go2Flow\ApiPlatform\Actions\Routes;
 use Illuminate\Console\Command;
 use function Laravel\Prompts\text;
 
-class MakeAll extends Command
+class MakeRoute extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'api-platform:all {name?}';
+    protected $signature = 'api-platform:route {name?}';
 
     /**
      * The console command description.
@@ -34,14 +32,13 @@ class MakeAll extends Command
         if (! $name = $this->argument('name')) {
 
             $name = text(
-                label: 'Please provide a name',
-                required: 'A name is required',
+                label: 'Please provide a Route name',
+                required: 'A Name is required',
             );
         }
 
-        foreach([Controllers::class, Definitions::class, Entities::class, Routes::class] as $action) {
-            $action = new $action();
-            $action->create($name);
-        }
+        $routes = New Routes();
+
+        $routes->create($name);
     }
 }

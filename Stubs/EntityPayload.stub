@@ -6,6 +6,10 @@ use Go2Flow\ApiPlatform\Traits\DataRules;
 
 class $NAME$Payload extends Abstract$NAME$
 {
+    // Set any properties here that are exclusively for Post and Patch requests.
+    // The DataRules trait will make any properties you set optional or required for Patch and Post requests respectively.
+    // Wish to overwrite this before for a specific field (e.g. by making a property required)?
+    // Create a protected static function called 'fixedRules' and inside return an array with your desired rules.
 
     use DataRules;
 

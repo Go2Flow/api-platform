@@ -4,5 +4,6 @@ namespace App\Data\Entities\$NAMES$;
 
 class $NAME$ extends Abstract$NAME$
 {
-
+    // Set only the properties that should be accessed via Get requests here.
+    // This includes all relationships that you're making available through the includes function.
 }

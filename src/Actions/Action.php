@@ -30,17 +30,23 @@ abstract class Action {
 
     protected function getStub(string $stub) : Stringable
     {
-        return Str::of(File::get($this->paths->{'stub' . $stub}()));
+        return Str::of($this->disk::get($this->paths->{'stub' . $stub}()));
     }
 
-    protected function setStubName(Stringable $stub, string $name)
+    protected function getRoutesFile()  : Stringable {
+
+        return Str::of($this->disk::get($this->paths->routeApiPlatform()));
+
+    }
+
+    protected function setStubName(Stringable $stub, string $name) : Stringable
     {
         return $stub->replace('$NAME$', $name)
-            ->replace('$NAMES$', Str::plural($name));
-
+            ->replace('$NAMES$', Str::plural($name))
+            ->replace('$LCNAME$', Str::lower($name));
     }
 
-    protected function writeFile(Stringable $stub, string $path)
+    protected function writeFile(Stringable $stub, string $path) : void
     {
         $this->disk::put(
             $path,

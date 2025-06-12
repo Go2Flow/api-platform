@@ -2,9 +2,15 @@
 
 namespace App\Data\Entities\$NAMES$;
 
+use Spatie\LaravelData\Optional;
 use Spatie\LaravelData\Data;
 
 class Abstract$NAME$ extends Data
 {
+    // Set all properties that should be available for both Get requests as well as Patch and Post requests.
+    // the 'Optional' class can be used for properties that can be NULL.
+    // Though LaravelData lets you set fields through the constructor or public properties, we advise you set them to public properties.
+    // Otherwise you have to repeat everything in the parent::__construct() call in the children classes.
+
 
 }

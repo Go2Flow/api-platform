@@ -8,9 +8,13 @@ class PathGenerator {
 
     CONST APP_BASE = 'app/';
     CONST PROJECT_BASE = 'Go2Flow/ApiPlatform/';
-
     const STUB_BASE = __DIR__ . '/../../Stubs/';
+    const ROUTE_BASE = 'routes/';
 
+    public function routeApiPlatform() : string {
+
+        return $this->create('route', 'api-platform');
+    }
 
     public function __call(string $method, array $args)
     {
@@ -31,6 +35,7 @@ class PathGenerator {
             'controller' => static::APP_BASE . 'Http/Controllers/'  .$path,
             'project' => static::PROJECT_BASE . $path,
             'stub' => static::STUB_BASE . $path . '.stub',
+            'route' => static::ROUTE_BASE . $path . '.php',
             default => throw new \Exception('Invalid path type')
         };
     }

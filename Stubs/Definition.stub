@@ -2,18 +2,47 @@
 
 namespace App\ApiLogic\Definitions;
 
-use Go2Flow\ApiPlatform\Helpers\ApiPlatformHelpers;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Spatie\LaravelData\Data;
 use Spatie\QueryBuilder\QueryBuilder;
 use Go2Flow\ApiPlatform\Interfaces\DefinitionInterface;
+use App\Data\Entities\$NAMES$\$NAME$Payload;
 
 class $NAME$Definition implements DefinitionInterface {
 
+    // This file is not complete!
+    // You still need to set the Model and add the repositories in the sore and update methods.
+    // Please note, for the api documentation to work two things must be observed:
+    // 1. All methods must be static.
+    // 2. Any call of a method of constant must be prefaced with the class name (you can't use 'self').
+
     // import model
     const MODEL = $NAME$::class;
+    const DEFAULT_PER_PAGE = 20;
+
+    public static function sort() : array {
+        return [
+            'id',
+            'updated_at',
+            'created_at',
+        ];
+    }
+
+    public static function relations() : array {
+
+        return [
+        ];
+
+}
+    public static function filters() : array {
+
+        return [
+        ];
+    }
+
+
 
     public static function sort() : array {
         return [
@@ -52,7 +81,7 @@ class $NAME$Definition implements DefinitionInterface {
             $NAME$Definition::sort()
             )
             ->paginate(
-                $request->integer('per_page', ApiPlatformHelper::DEFAULT_PER_PAGE),
+                $request->integer('per_page', $NAME$Definition::DEFAULT_PER_PAGE),
                 page: $request->integer('page', 1)
             );
     }

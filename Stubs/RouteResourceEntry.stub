@@ -1,0 +1,1 @@
+Route::apiResource('$LCNAME$', $NAME$Controller::class)->only(['index', 'show', 'update', 'store']);
