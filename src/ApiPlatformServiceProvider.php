@@ -6,7 +6,7 @@ use Go2Flow\ApiPlatform\Commands\MakeAll;
 use Go2Flow\ApiPlatform\Commands\MakeController;
 use Go2Flow\ApiPlatform\Commands\MakeDefinition;
 use Go2Flow\ApiPlatform\Commands\MakeEntities;
-use Go2Flow\ApiPlatform\Helpers\PathGenerator;
+use Go2Flow\ApiPlatform\Commands\Publish;
 use Illuminate\Support\ServiceProvider;
 
 class ApiPlatformServiceProvider extends ServiceProvider
@@ -27,6 +27,7 @@ class ApiPlatformServiceProvider extends ServiceProvider
                 MakeDefinition::class,
                 MakeEntities::class,
                 MakeController::class,
+                Publish::class
             ]);
         }
 
