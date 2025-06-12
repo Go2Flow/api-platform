@@ -31,8 +31,8 @@ class Publish extends Command
 
             $name = select(
                 label: 'Please provide a Route name',
-                required: 'A Name is required',
                 options: ['Filter', 'Includes', 'Transformers'],
+                required: 'A Name is required',
             );
         }
 
