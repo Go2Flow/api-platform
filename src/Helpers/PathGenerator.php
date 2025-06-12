@@ -9,7 +9,7 @@ class PathGenerator {
     CONST APP_BASE = 'app/';
     CONST PROJECT_BASE = 'Go2Flow/ApiPlatform/';
 
-    const STUB_BASE = __DIR__ . '/../Stubs/';
+    const STUB_BASE = __DIR__ . '/../../Stubs/';
 
 
     public function __call(string $method, array $args)

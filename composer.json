@@ -33,9 +33,9 @@
     "minimum-stability": "dev",
     "require": {
         "php": "^8.2",
-        "spatie/laravel-data": "^4.15",
-        "spatie/laravel-query-builder": "^6.3",
-        "dedoc/scramble": "^0.12.16",
+        "../../vendor/spatie/laravel-data": "^4.15",
+        "../../vendor/spatie/laravel-query-builder": "^6.3",
+        "../../vendor/dedoc/scramble": "^0.12.16",
         "dedoc/scramble-pro": "^0.7.7"
     }
 }
