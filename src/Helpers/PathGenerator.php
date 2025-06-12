@@ -28,7 +28,7 @@ class PathGenerator {
         return match ($type) {
             'logic' => static::APP_BASE . 'ApiLogic/'  .$path,
             'data' => static::APP_BASE . 'Data/'  .$path,
-            'controller' => static::APP_BASE . 'Controllers/'  .$path,
+            'controller' => static::APP_BASE . 'Http/Controllers/'  .$path,
             'project' => static::PROJECT_BASE . $path,
             'stub' => static::STUB_BASE . $path . '.stub',
             default => throw new \Exception('Invalid path type')
