@@ -30,34 +30,18 @@ class $NAME$Definition implements DefinitionInterface {
         ];
     }
 
-    public static function relations() : array {
-
-        return [
-        ];
-
-}
     public static function filters() : array {
 
         return [
         ];
     }
 
-
-
-    public static function sort() : array {
-        return [
-            'id',
-            'updated_at',
-            'created_at',
-        ];
-    }
-
     public static function relations() : array {
 
         return [
         ];
+    }
 
-}
     public static function filters() : array {
 
         return [
@@ -105,7 +89,6 @@ class $NAME$Definition implements DefinitionInterface {
 
         return $NAME$Payload::from(
                 // set update instructions via Repository
-
         );
     }
 }
