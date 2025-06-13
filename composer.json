@@ -36,6 +36,7 @@
         "spatie/laravel-data": "^4.15",
         "spatie/laravel-query-builder": "^6.3",
         "dedoc/scramble": "^0.12.16",
-        "dedoc/scramble-pro": "^0.7.7"
+        "dedoc/scramble-pro": "^0.7.7",
+        "laravel/laravel": "^11.0.0"
     }
 }
